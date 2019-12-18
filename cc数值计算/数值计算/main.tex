@@ -1,0 +1,73 @@
+%!TEX program = xelatex
+\documentclass{elegantpaper}
+
+\usepackage[indentfirst]{xeCJK}
+\setCJKmainfont[BoldFont={SimHei}]{SimSun}
+\setCJKsansfont{KaiTi}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage{pdfpages}
+\usepackage{amsmath}
+
+\usepackage[cache=false]{minted}
+\usepackage{tcolorbox}
+\usepackage{etoolbox}
+\setlength{\parindent}{2em}
+
+\renewcommand{\abstractname}{摘要}
+\renewcommand\refname{参考文献}
+
+\title{\Huge 数值计算实验报告}
+
+
+
+\author{\Large 姓名:单宝迪 \thanks{邮箱：lwshanbd@qq.com，指导教师：刘保东 教授} \\ \Large 学号:201700210069 \\%
+		山东大学计算机科学与技术学院\\ 数据科学与大数据技术实验班}
+\date{2019年12月}
+
+
+\begin{document}
+
+
+\maketitle
+
+
+
+\begin{abstract}
+	本文是\textbf{数值计算课程}的实验报告，一共涉及n部分的实验。
+	
+	其内容涉及了：非线性方程的求解、线性方程组的数值解、插值与多项式逼近、曲线拟合、数值微积分、微分方程求解等算法。对于大部分算法都给出了详细的推导，运行过程示例以及针对某一特定问题的解，并在对应解的后面，附上了实现算法的Python代码。
+	
+
+\end{abstract}
+
+
+
+\newpage
+\tableofcontents
+\newpage
+
+\input{chapter/summary.tex}
+\input{chapter/chapter1.tex}
+\input{chapter/chapter2.tex}
+\input{chapter/chapter3.tex}
+\input{chapter/chapter4.tex}
+\input{chapter/chapter5.tex}
+\input{chapter/chapter6.tex}
+\input{chapter/chapter7.tex}
+\input{chapter/chapter11.tex}
+\input{chapter/homework.tex}
+\input{chapter/conclusion.tex}
+
+\begin{thebibliography}{99}
+	\bibitem{ref1} Mathews, John H., and Kurtis D. Fink. Numerical methods using MATLAB. Vol. 4. Upper Saddle River, NJ: Pearson Prentice Hall, 2004.
+	\bibitem{ref3}Stefan Behnel, Robert Bradshaw, Craig Citro, Lisandro Dalcin, Dag Sverre Seljebotn and Kurt Smith. Cython: The Best of Both Worlds, Computing in Science and Engineering, 13, 31-39 (2011), DOI:10.1109/MCSE.2010.118
+	\bibitem{ref4}Fernando Pérez and Brian E. Granger. IPython: A System for Interactive Scientific Computing, Computing in Science \& Engineering, 9, 21-29 (2007), DOI:10.1109/MCSE.2007.53
+	\bibitem{ref5}Travis E, Oliphant. A guide to NumPy, USA: Trelgol Publishing, (2006).
+	\bibitem{ref6}John D. Hunter. Matplotlib: A 2D Graphics Environment, Computing in Science \& Engineering, 9, 90-95 (2007), DOI:10.1109/MCSE.2007.55
+	\bibitem{ref7}Jones E, Oliphant E, Peterson P, et al. SciPy: Open Source Scientific Tools for Python, 2001-, http://www.scipy.org/ [Online; accessed 2019-01-01].
+	\bibitem{ref8}Wes McKinney. Data Structures for Statistical Computing in Python, Proceedings of the 9th Python in Science Conference, 51-56 (2010)
+	\bibitem{ref9}Meurer A, Smith CP, Paprocki M, Čertík O, Kirpichev SB, Rocklin M, Kumar A, Ivanov S, Moore JK, Singh S, Rathnayake T, Vig S, Granger BE, Muller RP, Bonazzi F, Gupta H, Vats S, Johansson F, Pedregosa F, Curry MJ, Terrel AR, Roučka Š, Saboo A, Fernando I, Kulal S, Cimrman R, Scopatz A. SymPy: symbolic computing in Python, PeerJ Computer Science 3:e103 (2017)
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,115 @@
+\contentsline {section}{\numberline {1}综述}{4}{section.1}% 
+\contentsline {section}{\numberline {2}第1章}{4}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}题目1}{4}{subsection.2.1}% 
+\contentsline {paragraph}{分析}{4}{section*.2}% 
+\contentsline {paragraph}{实验结果}{5}{section*.5}% 
+\contentsline {paragraph}{代码}{5}{section*.6}% 
+\contentsline {subsection}{\numberline {2.2}题目2}{6}{subsection.2.2}% 
+\contentsline {paragraph}{基础知识：误差}{6}{section*.7}% 
+\contentsline {paragraph}{基础知识：误差的收敛阶}{7}{section*.8}% 
+\contentsline {paragraph}{求解：生成序列}{7}{section*.9}% 
+\contentsline {paragraph}{分析}{9}{section*.15}% 
+\contentsline {section}{\numberline {3}第2章}{9}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}题目1}{9}{subsection.3.1}% 
+\contentsline {paragraph}{不动点法}{10}{section*.16}% 
+\contentsline {paragraph}{求解}{10}{section*.17}% 
+\contentsline {paragraph}{分析}{11}{section*.19}% 
+\contentsline {paragraph}{分析}{12}{section*.21}% 
+\contentsline {paragraph}{分析}{13}{section*.23}% 
+\contentsline {subsection}{\numberline {3.2}题目2}{13}{subsection.3.2}% 
+\contentsline {paragraph}{证明}{13}{section*.24}% 
+\contentsline {paragraph}{二分法}{13}{section*.25}% 
+\contentsline {paragraph}{求解}{14}{section*.26}% 
+\contentsline {paragraph}{代码}{15}{section*.29}% 
+\contentsline {subsection}{\numberline {3.3}题目3}{16}{subsection.3.3}% 
+\contentsline {paragraph}{牛顿法}{16}{section*.30}% 
+\contentsline {paragraph}{求解}{17}{section*.31}% 
+\contentsline {paragraph}{$x_0=\frac {\pi }{2}$时}{18}{section*.34}% 
+\contentsline {paragraph}{$x_0=5\pi $时}{19}{section*.36}% 
+\contentsline {paragraph}{$x_0=10\pi $时}{19}{section*.38}% 
+\contentsline {paragraph}{代码}{19}{section*.39}% 
+\contentsline {paragraph}{解与迭代次数的关系探究}{20}{section*.40}% 
+\contentsline {subsection}{\numberline {3.4}题目4}{21}{subsection.3.4}% 
+\contentsline {paragraph}{二分法}{21}{section*.42}% 
+\contentsline {paragraph}{求解}{21}{section*.43}% 
+\contentsline {paragraph}{二分法代码}{22}{section*.45}% 
+\contentsline {paragraph}{牛顿法}{23}{section*.46}% 
+\contentsline {paragraph}{牛顿法代码}{24}{section*.49}% 
+\contentsline {paragraph}{割线法}{24}{section*.50}% 
+\contentsline {paragraph}{割线法代码}{25}{section*.52}% 
+\contentsline {paragraph}{错位法}{26}{section*.53}% 
+\contentsline {paragraph}{错位法代码}{26}{section*.55}% 
+\contentsline {section}{\numberline {4}第三章}{28}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}题目1}{28}{subsection.4.1}% 
+\contentsline {subsubsection}{\numberline {4.1.1}题目1.1}{28}{subsubsection.4.1.1}% 
+\contentsline {paragraph}{LU分解}{28}{section*.56}% 
+\contentsline {paragraph}{分解矩阵}{28}{section*.57}% 
+\contentsline {paragraph}{求解矩阵$X_{new}$}{28}{section*.58}% 
+\contentsline {paragraph}{求解矩阵$X$}{29}{section*.59}% 
+\contentsline {paragraph}{LU分解代码}{29}{section*.60}% 
+\contentsline {subsubsection}{\numberline {4.1.2}题目1.2}{31}{subsubsection.4.1.2}% 
+\contentsline {subparagraph}{推导}{31}{section*.61}% 
+\contentsline {subparagraph}{分析}{32}{section*.62}% 
+\contentsline {paragraph}{Jacobi迭代的解随迭代次数的变化}{32}{section*.63}% 
+\contentsline {paragraph}{Jacobi迭代代码}{34}{section*.67}% 
+\contentsline {paragraph}{Gauss-Seidel方法}{35}{section*.68}% 
+\contentsline {paragraph}{Gauss-Seidel方法的解随迭代次数的变化}{36}{section*.69}% 
+\contentsline {paragraph}{Gauss-Seidel方法代码}{38}{section*.73}% 
+\contentsline {paragraph}{Jacobi迭代与Gauss-Seidel方法对比}{39}{section*.74}% 
+\contentsline {subsection}{\numberline {4.2}题目2}{39}{subsection.4.2}% 
+\contentsline {paragraph}{分析}{39}{section*.76}% 
+\contentsline {subsection}{\numberline {4.3}题目3}{40}{subsection.4.3}% 
+\contentsline {paragraph}{Gauss-Seidel方法求解代码}{41}{section*.77}% 
+\contentsline {section}{\numberline {5}第四章}{41}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}题目1}{41}{subsection.5.1}% 
+\contentsline {paragraph}{样条插值}{41}{section*.78}% 
+\contentsline {paragraph}{自然边界(Natural Spline)}{42}{section*.79}% 
+\contentsline {paragraph}{固定边界(Clamped Spline)}{42}{section*.80}% 
+\contentsline {paragraph}{非扭结边界(Not-A-Knot Spline)}{42}{section*.81}% 
+\contentsline {paragraph}{周期边界(Periodic Spline)}{42}{section*.82}% 
+\contentsline {paragraph}{绘图}{42}{section*.83}% 
+\contentsline {paragraph}{计算结果展示}{43}{section*.86}% 
+\contentsline {paragraph}{三次样条插值代码}{44}{section*.88}% 
+\contentsline {section}{\numberline {6}第五章}{49}{section.6}% 
+\contentsline {subsection}{\numberline {6.1}题目1}{49}{subsection.6.1}% 
+\contentsline {paragraph}{组合梯形公式}{49}{section*.89}% 
+\contentsline {paragraph}{Simpson公式}{49}{section*.90}% 
+\contentsline {paragraph}{代码}{49}{section*.91}% 
+\contentsline {subsection}{\numberline {6.2}题目2}{50}{subsection.6.2}% 
+\contentsline {paragraph}{解答}{50}{section*.92}% 
+\contentsline {paragraph}{代码}{50}{section*.93}% 
+\contentsline {subsection}{\numberline {6.3}题目3}{51}{subsection.6.3}% 
+\contentsline {subsubsection}{\numberline {6.3.1}Simpson公式求解}{51}{subsubsection.6.3.1}% 
+\contentsline {subsubsection}{\numberline {6.3.2}复合梯形公式求解}{52}{subsubsection.6.3.2}% 
+\contentsline {section}{\numberline {7}第六章}{52}{section.7}% 
+\contentsline {subsection}{\numberline {7.1}题目1}{52}{subsection.7.1}% 
+\contentsline {paragraph}{欧拉显式格式}{52}{section*.94}% 
+\contentsline {subparagraph}{公式推导}{53}{section*.95}% 
+\contentsline {subparagraph}{误差分析}{53}{section*.96}% 
+\contentsline {subparagraph}{欧拉法误差分析}{53}{section*.97}% 
+\contentsline {paragraph}{梯形预估修正格式}{54}{section*.98}% 
+\contentsline {paragraph}{4阶龙格库塔格式}{54}{section*.99}% 
+\contentsline {paragraph}{解答}{55}{section*.100}% 
+\contentsline {paragraph}{代码}{56}{section*.105}% 
+\contentsline {subsection}{\numberline {7.2}题目2}{58}{subsection.7.2}% 
+\contentsline {paragraph}{解答}{58}{section*.106}% 
+\contentsline {paragraph}{代码}{59}{section*.108}% 
+\contentsline {section}{\numberline {8}第七章}{61}{section.8}% 
+\contentsline {subsection}{\numberline {8.1}题目1}{61}{subsection.8.1}% 
+\contentsline {paragraph}{解答}{61}{section*.110}% 
+\contentsline {paragraph}{代码}{62}{section*.113}% 
+\contentsline {section}{\numberline {9}第八章}{64}{section.9}% 
+\contentsline {subsection}{\numberline {9.1}题目1}{64}{subsection.9.1}% 
+\contentsline {paragraph}{幂法}{64}{section*.114}% 
+\contentsline {paragraph}{结果}{66}{section*.115}% 
+\contentsline {paragraph}{代码}{66}{section*.116}% 
+\contentsline {paragraph}{对称幂法}{66}{section*.117}% 
+\contentsline {paragraph}{结果}{67}{section*.118}% 
+\contentsline {paragraph}{代码}{67}{section*.119}% 
+\contentsline {paragraph}{反幂法}{67}{section*.120}% 
+\contentsline {paragraph}{结果}{68}{section*.121}% 
+\contentsline {paragraph}{代码}{68}{section*.122}% 
+\contentsline {subsection}{\numberline {9.2}题目2}{69}{subsection.9.2}% 
+\contentsline {paragraph}{解答}{69}{section*.123}% 
+\contentsline {section}{\numberline {10}作业}{70}{section.10}% 
+\contentsline {section}{\numberline {11}总结}{70}{section.11}% 

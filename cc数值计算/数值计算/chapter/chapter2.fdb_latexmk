@@ -1,0 +1,14 @@
+# Fdb version 3
+["xdvipdfmx"] 1575861688 "chapter2.xdv" "chapter2.pdf" "chapter2" 1575861747
+  "chapter2.xdv" 1575861709 3796 242034e0def394bdf107a34707ef1294 "xelatex"
+  (generated)
+  "chapter2.pdf"
+["xelatex"] 1575861707 "chapter2.tex" "chapter2.xdv" "chapter2" 1575861747
+  "c:/texlive/2019/texmf-dist/web2c/texmf.cnf" 1564664181 35430 ca24fb44b873d21ac4c63d01600decd4 ""
+  "c:/texlive/2019/texmf-var/web2c/xetex/xelatex.fmt" 1564666087 3750185 b0552228e54d6294457cdab3fe78cd43 ""
+  "c:/texlive/2019/texmf.cnf" 1564665999 673 4ae7b2f49cee444c5343a45b5d0f169c ""
+  "chapter2.aux" 1575861685 9 a94a2480d3289e625eea47cd1b285758 ""
+  "chapter2.tex" 1575861706 17953 600105228e7f8ede27ef14f4819374ed ""
+  (generated)
+  "chapter2.log"
+  "chapter2.xdv"

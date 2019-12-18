@@ -1,0 +1,6 @@
+PWD C:/Users/lwsha/Desktop/数值计算/cc数值计算/数值计算/chapter
+INPUT c:/texlive/2019/texmf.cnf
+INPUT c:/texlive/2019/texmf-dist/web2c/texmf.cnf
+INPUT c:/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT homework.tex
+OUTPUT homework.log

@@ -1,0 +1,176 @@
+\section{第八章}
+
+
+\subsection{题目1}
+已知矩阵
+
+$$
+\mathbf{A} = 
+\begin{gathered}
+\begin{bmatrix} 
+4 & -1 & 1\\
+-1 & 3 & -2\\
+1 & -2 & 3
+\end{bmatrix}
+\end{gathered}
+$$
+
+是一个对称矩阵，且其特征值为$\lambda_1=6,\lambda_2=3,\lambda_3=1$.
+分别利用幂法、对称幂法、反幂法求其最大特征值和特征向量。
+注意：可取初始向量$x^{(0)}=(111)^{T}.$
+
+\paragraph{幂法}
+假定$n\times n$的矩阵$\mathbf{A}$有$n$个特征值$\left|\lambda_1\right|> \left|\lambda_2\right| \geq \cdots \geq \left|\lambda_n\right|$, 对应线性无关的特征向量$\left\{\mathbf{v}^{\left(1\right)}, \mathbf{v}^{\left(2\right)},\cdots,\mathbf{v}^{\left(n\right)} \right\}$,
+
+$\forall \mathbf{x} \in \mathbb{R}^n, \exists \beta_1,\beta_2,\cdots,\beta_n, st \ \mathbf{x} = \beta_1 \mathbf{v}^{\left(1\right)} + \beta_2 \mathbf{v}^{\left(2\right)} + \cdots + \beta_n \mathbf{v}^{\left(n\right)} = \sum_{j=1}^{n} \beta_j \mathbf{v}^{\left(j\right)}$
+
+即
+$$
+\begin{aligned}
+\mathbf{Ax} = &\sum_{j=1}^{n} \beta_j \mathbf{Av}^{\left(j\right)} = \sum_{j=1}^{n} \beta_j \lambda_j \mathbf{v}^{\left(j\right)} \\
+\mathbf{A}^2\mathbf{x} = &\sum_{j=1}^{n} \beta_j \mathbf{Av}^{\left(j\right)} = \sum_{j=1}^{n} \beta_j \lambda_j^2 \mathbf{v}^{\left(j\right)} \\
+\mathbf{A}^2\mathbf{x} = &\sum_{j=1}^{n} \beta_j \mathbf{Av}^{\left(j\right)} = \sum_{j=1}^{n} \beta_j \lambda_j^2 \mathbf{v}^{\left(j\right)} \\
+&\vdots \\
+\mathbf{A}^k\mathbf{x} =& \sum_{j=1}^{n} \beta_j \mathbf{Av}^{\left(j\right)} = \sum_{j=1}^{n} \beta_j \lambda_j^k \mathbf{v}^{\left(j\right)} \\
+= &\lambda_1^k\left(\beta_1 \mathbf{v}^{\left(1\right)} + \sum_{j=2}^{n}\beta_j\left(\frac{\lambda_j}{\lambda_1}\right)^k\mathbf{v}^{\left(j\right)}\right)
+\end{aligned}$$
+由于
+$\forall j \in \left\{2,\cdots,n\right\}, \left|\lambda_1\right| > \left|\lambda_j\right|$
+,因此$\lim\limits_{k \to \infty}  \left(\frac{\lambda_j}{\lambda_1}\right)^k= 0$. 即
+$$\lim\limits_{k \to \infty} \mathbf{A}^k \mathbf{x} = \lim\limits_{k \to \infty}\lambda_1^k \beta_1 \mathbf{v}^{\left(1\right)}$$
+用$x_i^{\left(k\right)}$ 表示$\mathbf{x}^{\left(k\right)}$的第$i$个分量.由于
+$$\frac{x_i^{\left(k+1\right)}}{x_i^{\left(k\right)}} \approx \frac{\lambda_1^{k+1} \beta_1 \mathbf{v}_i^{\left(1\right)}}{\lambda_1^k \beta_1 \mathbf{v}_i^{\left(k\right)}} = \lambda_1$$
+需要注意, 当$\left|\lambda_1 \right| > 1$时, $\mathbf{x}^{\left(k\right)}$的各分量趋于无穷, 当$\left|\lambda_1\right| < 1$时, $\mathbf{x}^{\left(k\right)}$的各分量趋于0. 为了克服这一缺点, 需要将迭代向量规范化. 采用如下方式进行迭代:
+$$
+\left\{
+\begin{aligned}
+\mathbf{x}^{\left(0\right)} &= \mathbf{y}^{\left(0\right)} \neq \mathbf{0} \\
+\mathbf{x}^{\left(k\right)} &= \mathbf{Ay}^{\left(k-1\right)} \\
+\mathbf{y}^{\left(k\right)} & = \frac{\mathbf{x}^{\left(k\right)}}{\left|  \left|\mathbf{x}^{\left(k\right)} \right|\right|_{\infty}}
+\end{aligned}
+\right.$$
+
+$$\lim\limits_{k \to \infty} \mathbf{y}^{\left(k\right)} = \frac{v^{\left(1\right)}}{\left|\left|\mathbf{v}^{\left(1\right)} \right| \right|}, \lim\limits_{k \to \infty} \left|\left|\mathbf{x} \right| \right|_{\infty } = \lambda_1$$.
+
+易知最终的$\mathbf{x}$为所求特征向量.
+
+\paragraph{结果}
+
+解得最大特征值为$6.00000$，特征向量为$[1,-1,1]$，迭代次数为$22$次。
+
+\paragraph{代码}
+
+\begin{minted}{python}
+def pow2(A, X, step, eps):
+    l = 0
+    cnt = 0
+    err = 1
+    while err > eps and cnt < step:
+        cnt += 1
+        Y = A * X
+        C[cnt] = max(abs(Y))
+        dc = abs(l - C[cnt])
+        Y = (1 / C[cnt]) * Y
+        dv = norm(X - Y)
+        err = max(dc, dv)
+        X = Y
+        l = C[cnt]
+    V = X
+    return C, l, V
+\end{minted}
+
+\paragraph{对称幂法}
+假设$\mathbf{A}$是对称矩阵, $\mathbf{A}$有$n$个实数特征向量$\left|\lambda_1 \right| > \left|\lambda_2 \right| > \cdots > \left|\lambda_n \right|$, 对应$n$个标准正交特征向量$\left\{\mathbf{v}^{\left(1\right)}, \mathbf{v}^{\left(2\right)}, \cdots, \mathbf{v}^{\left(n\right)} \right\}$. 
+
+$\forall \mathbf{x}_0 \in \mathbb{R}^{n}, \mathbf{x}_0 = \beta_1 \mathbf{v}^{\left(1\right)} + \beta_2 \mathbf{v}^{\left(2\right)} + \cdots + \mathbf{v}^{\left(n\right)}$.
+
+对于$\mathbf{x}_k = \mathbf{A}^k \mathbf{x}_0$,$\mathbf{x}_k = \beta_1 \lambda_1^k \mathbf{v}^{\left(1\right)} + \beta_2 \lambda_2^k \mathbf{v}^{\left(2\right)} + \cdots + \beta_n \lambda_n^k \mathbf{v}^{\left(n\right)}$.
+因为$n$个特征向量标准正交, 因此
+$$\mathbf{x}_k^T \mathbf{x}_k = \sum_{j=1}^{n} \beta_j^2 \lambda_j^{2k} = \beta_1^2 \lambda_1^{2k} \left[1 + \sum_{j=2}^{n}\left(\frac{\beta_j}{\beta_1}\right)^2 \left(\frac{\lambda_j}{\lambda_n} \right)^{2k} \right]$$
+且
+$$ \mathbf{x}_k^{T} \mathbf{A} \mathbf{x}_k = \sum_{j=1}^{n} \beta_j^2 \lambda_j^{2k+1} = \beta_1^2 \lambda_1^{2k+1} \left[ 1 + \sum_{j=2}^{n} \left(\frac{\beta_j}{\beta_1}\right)^2 \left(\frac{\lambda_j}{\lambda_1}\right)^{2k+1} \right] $$
+于是
+$$\lim\limits_{k \to \infty} \frac{\mathbf{x}_k^T \mathbf{A} \mathbf{x}_k}{\mathbf{x}_k^T \mathbf{x}_k} = \lambda_1, \lim\limits_{k \to \infty} \frac{\mathbf{x}_k}{\left|\left|\mathbf{x}_k \right|_{2} \right|} = \frac{\mathbf{v}^{\left(1\right)}}{\left|\left|\mathbf{v}^{\left(1\right)} \right| \right|_2}$$.
+
+\paragraph{结果}
+
+解得最大特征值为$6.00000$，特征向量为$[0.5774, -0.5773, 0.5773]$，迭代次数为$18$次。
+
+\paragraph{代码}
+
+\begin{minted}{python}
+def sym_pow(A, X, step, eps):
+    cnt = 0
+    err = 1
+    X = X / norm(X, 2)
+    while err > eps and cnt < step:
+        cnt += 1
+        Y = A * X
+        C[cnt] = X * Y
+        dc = norm(Y, 2)
+        err = norm(X - Y / norm(Y, 2), 2)
+        X = Y / norm(Y, 2)
+    V = X
+    l = u
+    return C, l, V
+\end{minted}
+
+\paragraph{反幂法}
+设$\mathbf{A}$为$n\times n$阶非奇异矩阵, $\lambda$和$\mathbf{v}$为对应的特征向量, 即$\mathbf{Au} = \lambda \mathbf{v}$.
+
+由于$\mathbf{A}^{-1}\mathbf{v} = \frac{1}{\lambda}\mathbf{v}$. 如果$\mathbf{A}$的特征值的顺序为$\left|\lambda_1\ \right| \geq \left|\lambda_2 \right| \geq \cdots \geq \left|\lambda_n \right|$,
+
+则$\mathbf{A}^{-1}$的特征值$\left|\frac{1}{\lambda_n}  \right|\geq \left|\frac{1}{\lambda_{n-1}} \right| \geq \cdots \geq \left|\frac{1}{\lambda_1} \right|$.
+
+因此, 若对矩阵$\mathbf{A}^{-1}$用幂法, 即可计算出$\mathbf{A}^{-1}$的最大特征值$\frac{1}{\lambda_n}$, 从而求得$\mathbf{A}$按模最小的特征值$\lambda_n$.
+
+因为$\mathbf{A}^{-1}$的计算比较麻烦, 因此在实际运算时, 以求解方程组$\mathbf{Ax}^{\left(k+1 \right)} = \mathbf{x}^{\left(k\right)}$替代.
+
+在本题中, 需要求解最大特征值. 根据圆盘定理, 矩阵$\textbf{A}$的特征值有上界$Ma$. 设$\lambda$为$\textbf{A}$的特征值, $k\in \mathbb{R}$. 则$\left(\mathbf{A}-k\mathbf{I}\right)\mathbf{x} = \left(\lambda - k\right) \mathbf{x}$. 此时令$k = Ma + 2$, 则$\left(\mathbf{A} - \left(Ma+2\right)\mathbf{I}\right)$的特征值均小于$0$. 设用反幂法求出$\left(\mathbf{A} - \left(Ma+2\right)\mathbf{I}\right)^{-1}$的绝对值最小特征值为$\left|\lambda^{*}\right|$, 则$\textbf{A}$的最大特征值为$Ma+2-\frac{1}{\left|\lambda^{*} \right|}$.
+
+注: 圆盘定理:设$\mathbf{A}$是一个$n\times n$的矩阵, $\mathbb{R}_i$表示以$a_{ii}$为圆心, $\sum_{j=1,j\neq i}^{n}\left|a_{ij} \right|$的圆. 
+令$$\mathbb{R}_i = \left\{z \in \mathbb{C}\bigg | \left|z-a_{ii} \right| \leq \sum_{j=1,j\neq i}^{n} \left|a_{ij} \right| \right\}$$
+$\mathbf{A}$的特征值包含在$\bigcup_{i=1}^n \mathbb{R}_i $中.
+
+\paragraph{结果}
+~\\
+\begin{enumerate}
+	\item 当$\alpha = 5.5$时，特征值为$6.0000$，特征向量为$[-1, -1, -1]$，迭代次数为$10$次。
+	\item 当$\alpha = 2.5$时，特征值为$3.0000$，特征向量为$[1,0.5,-0.5]$，迭代次数为$13$次。
+	\item 当$\alpha = 0.6$时，特征值为$1.0000$，特征向量为$[0,1,1]$，迭代次数为$9$次。
+\end{enumerate}
+
+\paragraph{代码}
+
+\begin{minted}{python}
+def inv_pow(A, X, alpha, step, eps):
+    n = A.size()
+    A -= alpha * np.identity(n)
+    l = 0
+    cnt = 0
+    err = 1
+    while err > eps and cnt < step:
+        cnt += 1
+        Y = A / X
+        C[cnt] = max(Y)
+        dc = abs(l - C[cnt])
+        Y = (1 / C[cnt]) * Y
+        dv = norm(X - Y)
+        err = max(dc, dv)
+        X = Y
+        l = C[cnt]
+    l = alpha + 1 / C[cnt]
+    V = X
+    return C, l, V
+\end{minted}
+
+
+
+\subsection{题目2}
+
+验证实验：写出PPT中关于Household变换示例中的$H_1,H_2,H_3$,并验证示例结果。
+
+
+\paragraph{解答}
+
+\newpage
