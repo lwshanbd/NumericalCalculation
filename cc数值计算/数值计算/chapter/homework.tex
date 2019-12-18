@@ -3,7 +3,11 @@
 
 \subsection{1.1}
 
-\paragraph{解答}
+完成下列计算：
+$\int_{0}^{1 / 4} e^{x^{2}} d x \approx \int_{0}^{1 / 4}\left(1+x^{2}+\frac{x^{2}}{2 !}+\frac{x^{6}}{3 !}\right) d x=\widehat{p}$
+指出在这种情况下会出现哪种类型的误差，并将计算结果与真实值p=0.2553074606进行比较
+
+\textbf{解答}
 
 \begin{equation}
 \begin{aligned} \int_{0}^{1 / 4} e^{x^{2}} d x & \approx \int_{0}^{1 / 4}\left(1+x^{2}+\frac{x^{4}}{3}+\frac{x^{6}}{3 !}\right) d x \\ &=\left(x+\frac{x^{3}}{3}+\frac{x^{5}}{5(2 !)}+\frac{x^{7}}{7(3 !)}\right)^{x=\frac{1}{4}}_{x=0}\\ &=\frac{1}{4}+\frac{1}{\sqrt{9}^{2}}+\frac{1}{10240}+\frac{x}{7(381)} \\ &=\frac{192807^{2}}{1146880} \approx 0.2553074428=\hat{p} \end{aligned}
@@ -15,21 +19,46 @@
 
 \subsection{1.2}
 
-\paragraph{解答}
+有时使用三角或代数恒等式，重新排列函数中的项，可以避免精度损失。求下列函数的等价公式，以避免精度损失。
+
+1. $ln(x+1)-ln(x)$，其中x较大
+
+2.$\sqrt{x^{2}+1}-x$，其中x较大
+
+3.$\cos ^{2}(x)-\sin ^{2}(x)$，其中x约等于$\pi/4$
+
+4.$\sqrt{\frac{1+\cos (x)}{2}}$，其中x约等于$\pi$
+
+
+
+\textbf{解答}
 
 1. 将原式$ln(x+1)-ln(x)$转换为$\ln \left(\frac{x+1}{x}\right)$
 
 2.将原式$\sqrt{x^{2}+1}-x$转换为$\frac{1}{\sqrt{x^{2}+1+x}}$
-3.将原式$\cos ^{2}(x)-\sin ^{2}(x)$转换为$\cos (2 x)$
+
+3.将原式$\cos ^{2}(x)-\sin ^{2}(x)$转换为$\cos (2 x)$.
+
 4.将原式$\sqrt{\frac{1+\cos (x)}{2}}$转换为$\cos (x / 2)$
 
 
 \subsection{1.3}
 
-\paragraph{解答}
 
-1.
+讨论下列计算过程中的误差传播
 
+(1)三个数的和：$$
+p+q+r=\left(\widehat{p}+\epsilon_{p}\right)+\left(\widehat{q}+\epsilon_{q}\right)+\left(\widehat{r}+\epsilon_{r}\right)
+$$
+
+(2)两个数的商：$$\frac{p}{q}=\frac{\hat{p}+\epsilon_{p}}{\hat{q}+\epsilon_{q}}$$
+
+(3)三个数的积：$$p q r=\left(\hat{p}+\epsilon_{p}\right)\left(\hat{q}+\epsilon_{q}\right)\left(\hat{r}+\epsilon_{r}\right)$$
+
+\textbf{解答}
+
+1.\begin{equation}\epsilon_{p}+\epsilon_{q}+\epsilon_{r}
+\end{equation}
 2.\begin{equation}
 \frac{p}{q}=\frac{\hat{p}+\epsilon_{p}}{\hat{q}+\epsilon_{q}}=\frac{\hat{p}}{\hat{q}}+\frac{\epsilon_{p}+\frac{p}{\hat{q}} \epsilon_{q}}{\hat{q}+\epsilon_{q}}
 \end{equation}
@@ -39,3 +68,75 @@
 \begin{equation}
 \begin{aligned} p q r=&\left(\hat{p}+\epsilon_{p}\right)\left(\hat{q}+\epsilon_{q}\right)\left(\hat{r}+\epsilon_{r}\right) \\=& \hat{p} \hat{q} \hat{r}+\hat{p} \hat{r} \epsilon_{q}+\hat{q} \hat{r} \epsilon_{p}+\hat{p} \hat{q} \epsilon_{r}+\hat{r} \epsilon_{p} \epsilon_{q}+\hat{q} \epsilon_{p} \epsilon_{r}+\hat{p} \epsilon_{q} \epsilon_{r}+\epsilon_{p} \epsilon_{q} \epsilon_{r} \\=& \hat{p} \hat{q} \hat{r}+\left(\hat{p} \hat{r} \epsilon_{q}+\hat{q} \hat{r} \epsilon_{p}+\hat{p} \hat{q} \epsilon_{r}\right) \\ &+\left(\hat{r} \epsilon_{p} \epsilon_{q}+\hat{q} \epsilon_{p} \epsilon_{r}+\hat{p} \epsilon_{q} \epsilon_{r}\right)+\epsilon_{p} \epsilon_{q} \epsilon_{r} \end{aligned}
 \end{equation}
+
+
+\subsection{1.3}
+
+设有泰勒展开式
+
+$$\cos (h)=1-\frac{h^{2}}{2 !}+\frac{h^{4}}{4 !}+O\left(h^{6}\right)$$
+
+和
+
+
+$$\sin (h)=h-\frac{h^{3}}{3 !}+\frac{h^{5}}{5 !}+O\left(h^{7}\right)$$
+
+判定它们和与积的近似阶：
+
+\textbf{解答}
+
+\begin{equation}
+\begin{aligned} \cos (h)+\sin (h) &=1+h-\frac{h^{2}}{2}-\frac{h^{3}}{6}+\frac{h^{4}}{24}+\boldsymbol{O}\left(h^{5}\right) \\ \cos (h) \sin (h) &=h-\frac{2 h^{3}}{3}+\frac{2 h^{5}}{15}+\boldsymbol{O}\left(h^{7}\right) \end{aligned}
+\end{equation}
+
+\begin{equation}
+\begin{array}{l}{\text { 中间的计算过程为}} \\ {\qquad\left(1+h+\frac{h^{2}}{2 !}+\frac{h^{3}}{3 !}+\frac{h^{4}}{4 !}\right)\left(h-\frac{h^{3}}{3 !}\right)=h+h^{2}+\frac{h^{3}}{3}-\frac{h^{5}}{24}-\frac{h^{6}}{36}-\frac{h^{7}}{144}}\end{array}
+\end{equation}
+
+
+
+
+\subsection{分析讨论题1}
+
+求方程$x^2+(\alpha+\beta)x+10^9=0$的根，其中$\alpha=-10^9，\beta=-1$讨论如何设计计算格式才能有效地减少误差，提高计算精度。
+
+\paragraph{分析}
+
+
+设$a \neq 0, b^2 - 4ac > 0$，且有方程$ax^2 + bx + c = 0$，则通过如下二次根公式可解出方程的根：
+
+\begin{equation}
+x_1=\frac{-b+\sqrt{b^2-4ac}}{2a}  \quad \quad x_2=\frac{-b-\sqrt{b^2-4ac}}{2a}
+\label{eq3}
+\tag{1}
+\end{equation}
+
+通过将分子有理化，可以等价变换成下列公式
+
+\begin{equation}
+x_1=\frac{-2c}{b+\sqrt{b^2-4ac}} \quad \quad x_2=\frac{-2c}{b-\sqrt{b^2-4ac}}
+\label{eq4}
+\tag{2}
+\end{equation}
+
+\textbf{当$|b| \approx \sqrt{b^2 - 4ac}$，必须小心处理，以避免其值过小而引起巨量消失（catastrophic cancellation）而带来精度损失。}
+
+\begin{itemize}
+	\item 当$b > 0$的时候应使用公式(\ref{eq4})计算$x_1$，应使用公式(\ref{eq3})计算$x_2$。
+	\item 当$b < 0$的时候应使用公式(\ref{eq3})计算$x_1$，应使用公式(\ref{eq4})计算$x_2$。
+\end{itemize}
+
+
+
+综上，应使用公式(\ref{eq3})计算$x_1$，应使用公式(\ref{eq4})计算$x_2$。
+
+
+
+\subsection{分析讨论题2}
+
+以计算$x^31$为例，讨论如何设计计算格式才能减少计算次数
+
+\paragraph{解答}
+
+
+

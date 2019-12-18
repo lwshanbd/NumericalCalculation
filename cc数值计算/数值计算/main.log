@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.8.1)  18 DEC 2019 22:53
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.8.1)  19 DEC 2019 01:54
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2412,18 +2412,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 136--138
 runsystem(pygmentize -l python -f latex -P commandprefix=PYG -F tokenmerge -o m
 ain.out.pyg main.pyg)...executed.
 
-(./main.out.pyg) [68] [69]) (./chapter/homework.tex) (./chapter/conclusion.tex)
-[70] [71]
+(./main.out.pyg) [68] [69]) (./chapter/homework.tex [70] [71]
+Missing character: There is no ， in font ntx-Regular-tlf-ot1!
+
+
+LaTeX Warning: Reference `eq4' on page 72 undefined on input line 125.
+
+
+LaTeX Warning: Reference `eq3' on page 72 undefined on input line 125.
+
+
+LaTeX Warning: Reference `eq3' on page 72 undefined on input line 126.
+
+
+LaTeX Warning: Reference `eq4' on page 72 undefined on input line 126.
+
+
+LaTeX Warning: Reference `eq3' on page 72 undefined on input line 131.
+
+
+LaTeX Warning: Reference `eq4' on page 72 undefined on input line 131.
+
+) (./chapter/conclusion.tex [72]) [73] [74]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
  (./main.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 73.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B17156D15F505562E067A9EE3ADFE120.
 
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: E27EC53C9C26B4004655A9B48F01C2D2
+(rerunfilecheck)             After:  3179B65A549DEB8900BAF7645F7A80BC.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -2434,12 +2463,12 @@ runsystem(del main.out.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 40861 strings out of 492922
- 816756 string characters out of 6136752
- 941349 words of memory out of 5000000
- 44232 multiletter control sequences out of 15000+600000
- 590882 words of font info for 181 fonts, out of 8000000 for 9000
+ 40965 strings out of 492922
+ 820542 string characters out of 6136752
+ 941351 words of memory out of 5000000
+ 44323 multiletter control sequences out of 15000+600000
+ 599498 words of font info for 204 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,17n,94p,853b,663s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (71 pages).
+Output written on main.pdf (74 pages).
